@@ -1,0 +1,35 @@
+services:
+  db_postgres:
+    container_name: postgresql
+    image: postgres:16-alpine
+    restart: always
+    ports:
+      - "5431:5432"
+
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgresql
+      POSTGRES_USER: admin
+      POSTGRES_DB: AMRSOFTWAREDB
+
+  db_mysql:
+    container_name: mysql
+    image: mysql:8.4
+    restart: always
+    ports:
+      - "3305:3306"
+
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: AMRSOFTWARE_DB
+      MYSQL_USER: user
+      MYSQL_PASSWORD: mysql123456
+
+volumes:
+  postgres-data:
+    external: false
+  mysql-data:
+    external: false

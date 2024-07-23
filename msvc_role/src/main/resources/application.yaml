@@ -1,0 +1,25 @@
+app:
+  userUrl: ${USER_URL:http://localhost:8001/users}
+
+server:
+  port: ${PORT:8002}
+
+  servlet:
+    context-path: /roles
+
+spring:
+  application:
+    name: ${NAME_APP:msvc-roles}
+
+  datasource:
+    url: jdbc:mysql://${DB_MYSQL_HOST:localhost}:${DB_MYSQL_PORT:3305}/${DB_MYSQL_NAME:AMRSOFTWARE_DB}
+    username: ${DB_MYSQL_USERNAME:root}
+    password: ${DB_MYSQL_PASSWORD:admin}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+
+    hibernate:
+      ddl-auto: update

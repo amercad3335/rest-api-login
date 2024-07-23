@@ -1,0 +1,25 @@
+app:
+  roleUrl: ${ROLE_URL:http://localhost:8002/roles}
+
+server:
+  port: ${PORT:8001}
+
+  servlet:
+    context-path: /users
+
+spring:
+  application:
+    name: ${NAME_APP:msvc-users}
+
+  datasource:
+    url: jdbc:postgresql://${DB_POSTGRES_HOST:localhost}:${DB_POSTGRES_PORT:5431}/${DB_POSTGRES_NAME:AMRSOFTWAREDB}
+    username: ${DB_POSTGRES_USER:admin}
+    password: ${DB_POSTGRES_PASSWORD:postgresql}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+
+    hibernate:
+      ddl-auto: update

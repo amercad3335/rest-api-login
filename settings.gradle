@@ -1,0 +1,4 @@
+rootProject.name = 'msvc_host'
+
+include('msvc_role')
+include('msvc_user')
